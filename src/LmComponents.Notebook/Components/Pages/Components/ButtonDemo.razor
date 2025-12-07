@@ -1,0 +1,67 @@
+@page "/components/button"
+@rendermode InteractiveServer
+
+<PageTitle>LmButton Demo</PageTitle>
+
+<h1>LmButton Component</h1>
+
+<p>
+    The <strong>LmButton</strong> component provides a simple, reusable button with consistent styling and event handling.
+</p>
+
+<div class="demo-section">
+    <h2>Basic Button</h2>
+    <p>A simple button with default text:</p>
+    <LmButton />
+</div>
+
+<div class="demo-section">
+    <h2>Button with Custom Text</h2>
+    <p>A button with custom display text:</p>
+    <LmButton Text="Click Me!" />
+</div>
+
+<div class="demo-section">
+    <h2>Button with Click Handler</h2>
+    <p>A button that responds to clicks:</p>
+    <LmButton Text="Increment Counter" OnClick="IncrementCounter" />
+    <p class="result">Click count: <strong>@clickCount</strong></p>
+</div>
+
+<div class="demo-section">
+    <h2>Button with Custom CSS</h2>
+    <p>A button with additional CSS classes:</p>
+    <LmButton Text="Custom Styled" CssClass="custom-button" />
+</div>
+
+<div class="demo-section">
+    <h2>Async Operation</h2>
+    <p>A button that triggers an async operation:</p>
+    <LmButton Text="Save Data" OnClick="SaveDataAsync" />
+    <p class="result">@saveMessage</p>
+</div>
+
+<div class="documentation-link">
+    <h2>Documentation</h2>
+    <p>
+        For detailed documentation, see:
+        <a href="https://github.com/yourusername/LmComponents/blob/main/docs/LmComponents.Components/Button.Md">Button.Md</a>
+    </p>
+</div>
+
+@code {
+    private int clickCount = 0;
+    private string saveMessage = "Not saved yet";
+
+    private void IncrementCounter()
+    {
+        clickCount++;
+    }
+
+    private async Task SaveDataAsync()
+    {
+        saveMessage = "Saving...";
+        await Task.Delay(1000); // Simulate async operation
+        saveMessage = $"Data saved at {DateTime.Now:HH:mm:ss}";
+    }
+}

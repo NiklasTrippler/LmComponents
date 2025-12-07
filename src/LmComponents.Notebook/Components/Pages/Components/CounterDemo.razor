@@ -1,0 +1,63 @@
+@page "/components/counter"
+@rendermode InteractiveServer
+
+<PageTitle>LmCounter Demo</PageTitle>
+
+<h1>LmCounter Component</h1>
+
+<p>
+    The <strong>LmCounter</strong> component provides a stateful counter with increment and reset functionality.
+    It demonstrates component composition by using <strong>LmButton</strong> for its interactive elements.
+</p>
+
+<div class="demo-section">
+    <h2>Basic Counter</h2>
+    <p>A simple counter starting at 0, incrementing by 1:</p>
+    <LmCounter />
+</div>
+
+<div class="demo-section">
+    <h2>Counter with Custom Initial Count</h2>
+    <p>A counter starting at 10:</p>
+    <LmCounter InitialCount="10" />
+</div>
+
+<div class="demo-section">
+    <h2>Counter with Custom Increment Amount</h2>
+    <p>A counter incrementing by 5 each click:</p>
+    <LmCounter IncrementAmount="5" />
+</div>
+
+<div class="demo-section">
+    <h2>Counter with Both Parameters</h2>
+    <p>A counter starting at 100, incrementing by 10:</p>
+    <LmCounter InitialCount="100" IncrementAmount="10" />
+</div>
+
+<div class="demo-section">
+    <h2>Countdown Counter</h2>
+    <p>A counter starting at 10, decrementing by 1 (negative increment):</p>
+    <LmCounter InitialCount="10" IncrementAmount="-1" />
+</div>
+
+<div class="demo-section">
+    <h2>Multiple Counters</h2>
+    <p>Multiple counter instances maintain independent state:</p>
+    <div class="counter-grid">
+        <LmCounter InitialCount="0" IncrementAmount="1" />
+        <LmCounter InitialCount="50" IncrementAmount="5" />
+        <LmCounter InitialCount="20" IncrementAmount="-2" />
+    </div>
+</div>
+
+<div class="documentation-link">
+    <h2>Documentation</h2>
+    <p>
+        For detailed documentation, see:
+        <a href="https://github.com/yourusername/LmComponents/blob/main/docs/LmComponents.Components/Counter.Md">Counter.Md</a>
+    </p>
+    <p>
+        This component depends on:
+        <a href="/components/button">LmButton</a>
+    </p>
+</div>

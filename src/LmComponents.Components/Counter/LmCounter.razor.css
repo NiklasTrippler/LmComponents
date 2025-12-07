@@ -1,0 +1,44 @@
+.lm-counter {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.counter-display {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-size: 16px;
+}
+
+.counter-label {
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.counter-value {
+    color: #1f2937;
+    font-size: 24px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.counter-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.lm-counter ::deep .reset-button {
+    background-color: #fee2e2;
+    border-color: #fca5a5;
+    color: #991b1b;
+}
+
+.lm-counter ::deep .reset-button:hover {
+    background-color: #fecaca;
+    border-color: #f87171;
+}

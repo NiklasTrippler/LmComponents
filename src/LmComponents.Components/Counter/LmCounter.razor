@@ -1,0 +1,43 @@
+@namespace LmComponents.Components
+
+<div class="lm-counter">
+    <div class="counter-display">
+        <span class="counter-label">Count:</span>
+        <span class="counter-value">@currentCount</span>
+    </div>
+    <div class="counter-actions">
+        <LmButton Text="Increment" OnClick="IncrementCount" />
+        <LmButton Text="Reset" OnClick="ResetCount" CssClass="reset-button" />
+    </div>
+</div>
+
+@code {
+    private int currentCount;
+
+    /// <summary>
+    /// The initial count value when the component is created.
+    /// </summary>
+    [Parameter]
+    public int InitialCount { get; set; } = 0;
+
+    /// <summary>
+    /// The amount to increment the counter by when the increment button is clicked.
+    /// </summary>
+    [Parameter]
+    public int IncrementAmount { get; set; } = 1;
+
+    protected override void OnInitialized()
+    {
+        currentCount = InitialCount;
+    }
+
+    private void IncrementCount()
+    {
+        currentCount += IncrementAmount;
+    }
+
+    private void ResetCount()
+    {
+        currentCount = InitialCount;
+    }
+}

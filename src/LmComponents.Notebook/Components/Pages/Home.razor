@@ -1,0 +1,48 @@
+﻿@page "/"
+
+<PageTitle>LmComponents Notebook</PageTitle>
+
+<h1>LmComponents Notebook</h1>
+
+<p class="intro">
+    Welcome to the LmComponents Notebook - an interactive showcase and testing environment for the LmComponents library.
+    This application is specifically designed to be easy to navigate with MCP browser tools and other AI assistants.
+</p>
+
+<div class="info-box">
+    <h2>About LmComponents</h2>
+    <p>
+        LmComponents is a Blazor component library specifically designed to be easily developed and maintained by
+        Large Language Models (LLMs) such as Claude and Gemini. The project emphasizes clear documentation,
+        simple navigation, and LLM-friendly tooling.
+    </p>
+</div>
+
+<div class="component-list">
+    <h2>Available Components</h2>
+    <p>Click on any component below to see its interactive demo:</p>
+
+    <div class="component-grid">
+        <div class="component-card">
+            <h3><a href="/components/button">LmButton</a></h3>
+            <p class="component-description">Simple button component with customizable text and click handling</p>
+            <p class="component-meta"><strong>Dependencies:</strong> None</p>
+        </div>
+
+        <div class="component-card">
+            <h3><a href="/components/counter">LmCounter</a></h3>
+            <p class="component-description">Counter component that tracks and displays click count with increment and reset functionality</p>
+            <p class="component-meta"><strong>Dependencies:</strong> LmButton</p>
+        </div>
+    </div>
+</div>
+
+<div class="documentation-section">
+    <h2>Documentation</h2>
+    <p>For detailed information about the project and components:</p>
+    <ul>
+        <li><strong>Quick Reference:</strong> See <code>Components.Md</code> in the project root for a quick overview of all components</li>
+        <li><strong>Detailed Docs:</strong> Each component has comprehensive documentation in the <code>docs/</code> folder</li>
+        <li><strong>Contributing:</strong> Review <code>CONTRIBUTING.md</code> for project architecture and contribution guidelines</li>
+    </ul>
+</div>

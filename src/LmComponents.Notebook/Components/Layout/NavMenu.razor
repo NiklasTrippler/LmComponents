@@ -1,0 +1,34 @@
+﻿<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">LmComponents</a>
+    </div>
+</div>
+
+<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+
+<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
+    <nav class="nav flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+
+        <div class="nav-section">
+            <div class="nav-section-title">Components</div>
+
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="components/button">
+                    <span class="bi bi-app-nav-menu" aria-hidden="true"></span> LmButton
+                </NavLink>
+            </div>
+
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="components/counter">
+                    <span class="bi bi-app-nav-menu" aria-hidden="true"></span> LmCounter
+                </NavLink>
+            </div>
+        </div>
+    </nav>
+</div>
+

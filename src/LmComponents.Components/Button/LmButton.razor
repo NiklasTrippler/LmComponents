@@ -1,0 +1,30 @@
+@namespace LmComponents.Components
+
+<button class="lm-button @CssClass" @onclick="HandleClick">
+    @Text
+</button>
+
+@code {
+    /// <summary>
+    /// The text to display on the button.
+    /// </summary>
+    [Parameter]
+    public string Text { get; set; } = "Button";
+
+    /// <summary>
+    /// Event callback invoked when the button is clicked.
+    /// </summary>
+    [Parameter]
+    public EventCallback OnClick { get; set; }
+
+    /// <summary>
+    /// Optional additional CSS classes to apply to the button.
+    /// </summary>
+    [Parameter]
+    public string? CssClass { get; set; }
+
+    private async Task HandleClick()
+    {
+        await OnClick.InvokeAsync();
+    }
+}

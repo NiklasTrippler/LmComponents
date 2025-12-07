@@ -1,0 +1,49 @@
+.demo-section {
+    margin: 24px 0;
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background-color: #f9fafb;
+}
+
+.demo-section h2 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #374151;
+}
+
+.demo-section p {
+    margin-bottom: 12px;
+    color: #6b7280;
+}
+
+.result {
+    margin-top: 12px;
+    padding: 8px 12px;
+    background-color: #ffffff;
+    border-left: 3px solid #3b82f6;
+    font-family: monospace;
+}
+
+.documentation-link {
+    margin-top: 32px;
+    padding: 16px;
+    background-color: #eff6ff;
+    border-radius: 8px;
+}
+
+.documentation-link h2 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #1e40af;
+}
+
+::deep .custom-button {
+    background-color: #3b82f6;
+    color: #ffffff;
+    border-color: #2563eb;
+}
+
+::deep .custom-button:hover {
+    background-color: #2563eb;
+}
