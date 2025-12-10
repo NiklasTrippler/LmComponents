@@ -185,6 +185,31 @@ This project follows specific design principles to make it easy for AI assistant
 7. **Self-Documenting Code**: Clear naming, comments where necessary
 8. **Testability**: Each component designed to be easily tested
 
+## Component Design Standards
+
+### Using FluentUI as a Base
+
+**IMPORTANT**: When creating new components for LmComponents, use **Microsoft FluentUI Blazor Components** as a base whenever appropriate. This provides:
+
+- **Consistent Design System**: FluentUI components follow Microsoft's Fluent Design System with built-in accessibility, theming, and best practices
+- **Reduced Custom Code**: Leverage existing, well-tested components rather than building everything from scratch
+- **Better Accessibility**: FluentUI components are built with ARIA standards and keyboard navigation
+- **Professional Appearance**: Modern, polished UI that works well across different contexts
+
+**When to Use FluentUI Components**:
+- Prefer wrapping or extending FluentUI components when they provide the base functionality you need
+- Use FluentUI design tokens for colors, spacing, typography when creating custom components
+- Follow FluentUI patterns for interaction and behavior even in custom components
+
+**When to Build Custom**:
+- When no suitable FluentUI component exists for your use case
+- When wrapping would add unnecessary complexity
+- When the component needs to be completely different from standard UI patterns
+
+**Package**: `Microsoft.FluentUI.AspNetCore.Components`
+
+**Example**: Instead of building a basic button from scratch, consider extending `FluentButton` or using it as a reference for behavior and styling.
+
 ## Adding a New Component
 
 Follow these steps when creating a new component:

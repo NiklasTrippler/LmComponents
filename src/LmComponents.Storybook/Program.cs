@@ -1,10 +1,14 @@
 using LmComponents.Storybook.Components;
+using Microsoft.FluentUI.AspNetCore.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+// Add FluentUI services
+builder.Services.AddFluentUIComponents();
 
 var app = builder.Build();
 
