@@ -15,6 +15,17 @@ For detailed information about any component, follow the documentation link.
 
 ---
 
+## Visual Quick Reference
+
+**Screenshot Policy**: All components, current and future, MUST include screenshots in their documentation. This provides:
+- Quick visual reference to see what components look like without running code
+- Immediate understanding of component appearance and behavior
+- LLM-friendly context for understanding component structure
+
+Each component below includes an overview screenshot. For detailed feature screenshots, see the component's full documentation.
+
+---
+
 ## Available Components
 
 *Components will be added here as they are implemented. Each entry follows this format:*
@@ -31,11 +42,17 @@ For detailed information about any component, follow the documentation link.
 ## Component Index
 
 ### LmButton
+
+![LmButton Component](docs/screenshots/LmButton/overview.png)
+
 - **Purpose**: Simple button component with customizable text and click handling
 - **Dependencies**: None
 - **Documentation**: [Full Documentation](docs/LmComponents.Components/Button.Md)
 
 ### LmCounter
+
+![LmCounter Component](docs/screenshots/LmCounter/overview.png)
+
 - **Purpose**: Counter component that tracks and displays click count with increment and reset functionality
 - **Dependencies**: [LmButton](#lmbutton)
 - **Documentation**: [Full Documentation](docs/LmComponents.Components/Counter.Md)

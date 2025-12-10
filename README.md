@@ -11,10 +11,12 @@ LmComponents (Language Model Components) is built with a unique focus: making it
 Modern AI assistants can significantly accelerate development when given clear, well-structured information. LmComponents achieves this through:
 
 - **Hierarchical Documentation**: Quick-reference summaries in `Components.Md` with links to detailed docs
+- **Visual Documentation**: Screenshots showing component appearance and behavior
 - **Minimal Context Loading**: LLMs can grasp the entire component library structure without reading full documentation
 - **Clear Dependencies**: Every component explicitly lists its dependencies
 - **Simple Navigation**: The Notebook demo app uses standard HTML links compatible with MCP browser tools
 - **Consistent Structure**: Predictable patterns across all components and documentation
+- **Automated Tooling**: Screenshot capture tool for maintaining visual documentation
 
 ## Project Structure
 
@@ -27,8 +29,11 @@ LmComponents/
 │   ├── LmComponents.Components/     # Component library
 │   ├── LmComponents.Notebook/       # Interactive demo/test application
 │   └── LmComponents.Tests/          # Component tests
-└── docs/                            # Detailed component documentation
-    └── LmComponents.Components/
+├── docs/                            # Detailed component documentation
+│   ├── screenshots/                 # Component screenshots
+│   └── LmComponents.Components/
+└── tools/
+    └── ScreenshotTool/              # Automated screenshot capture tool
 ```
 
 ## Quick Start
@@ -50,11 +55,30 @@ The Notebook application provides an interactive environment where you can brows
 dotnet test
 ```
 
+### Capture Screenshots
+
+**Start the Notebook** (in a separate terminal/window):
+```bash
+dotnet run --project src/LmComponents.Notebook
+```
+
+**Run the Screenshot Tool** (in another terminal):
+```bash
+# Capture all components
+dotnet tools/ScreenshotTool/bin/Debug/net10.0/ScreenshotTool.dll http://localhost:5285 docs/screenshots
+
+# Or capture specific component(s)
+dotnet tools/ScreenshotTool/bin/Debug/net10.0/ScreenshotTool.dll http://localhost:5285 docs/screenshots LmButton
+```
+
+See `tools/ScreenshotTool/README.md` for detailed information about the screenshot automation tool.
+
 ## Documentation Structure
 
 ### Components.Md
 Quick reference file with:
 - Component name and purpose
+- Visual preview (screenshot)
 - Dependencies on other components
 - Link to full documentation
 
@@ -63,6 +87,7 @@ Read this first to get an overview of all available components.
 ### docs/\<namespace\>/ComponentName.Md
 Detailed documentation for each component:
 - Full component overview
+- Visual preview section with feature screenshots
 - All parameters and their types
 - Events and callbacks
 - Usage examples

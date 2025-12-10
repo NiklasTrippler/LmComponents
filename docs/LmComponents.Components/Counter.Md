@@ -20,6 +20,30 @@ Provides a reusable counter implementation with:
 
 **LmButton** - Used for both the increment and reset buttons. The counter component composes two LmButton instances to provide its interactive functionality.
 
+## Visual Preview
+
+Below are screenshots demonstrating the various features and configurations of the LmCounter component:
+
+### Basic Counter
+![Basic Counter](../screenshots/LmCounter/basic.png)
+*A simple counter starting at 0, incrementing by 1*
+
+### Custom Initial Count
+![Custom Initial Count](../screenshots/LmCounter/custom-initial.png)
+*Counter starting at a custom value (10)*
+
+### Custom Increment Amount
+![Custom Increment Amount](../screenshots/LmCounter/custom-increment.png)
+*Counter incrementing by a custom amount (5)*
+
+### Countdown Counter
+![Countdown Counter](../screenshots/LmCounter/countdown.png)
+*Counter with negative increment, counting down from 10*
+
+### Multiple Independent Instances
+![Multiple Counter Instances](../screenshots/LmCounter/multiple-instances.png)
+*Multiple counter components maintaining independent state*
+
 ## Parameters
 
 ### InitialCount
@@ -172,5 +196,5 @@ LmCounter specifically demonstrates:
 
 ---
 
-**Last Updated**: 2025-12-07
+**Last Updated**: 2025-12-10
 **Version**: 1.0.0

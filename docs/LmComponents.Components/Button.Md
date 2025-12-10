@@ -19,6 +19,30 @@ Provides a standardized button implementation with:
 
 **None** - This is a foundational component with no dependencies on other LmComponents.
 
+## Visual Preview
+
+Below are screenshots demonstrating the various features and configurations of the LmButton component:
+
+### Basic Button
+![Basic Button](../screenshots/LmButton/basic.png)
+*A simple button with default text*
+
+### Custom Text
+![Custom Text Button](../screenshots/LmButton/custom-text.png)
+*Button with custom display text*
+
+### Click Handler
+![Button with Click Handler](../screenshots/LmButton/click-handler.png)
+*Interactive button responding to clicks, showing click count*
+
+### Custom Styling
+![Custom Styled Button](../screenshots/LmButton/custom-style.png)
+*Button with additional CSS classes applied*
+
+### Async Operation
+![Async Operation](../screenshots/LmButton/async-operation.png)
+*Button handling asynchronous operations with status display*
+
 ## Parameters
 
 ### Text
@@ -147,5 +171,5 @@ Potential improvements (not currently implemented):
 
 ---
 
-**Last Updated**: 2025-12-07
+**Last Updated**: 2025-12-10
 **Version**: 1.0.0

@@ -54,11 +54,67 @@ If you change which components depend on other components:
 - **Update** both `Components.Md` and the detailed docs with new dependencies
 - **Update** any architectural documentation that describes component relationships
 
+#### 6. Screenshot Requirements
+
+If you add a new component, modify component appearance, or add visual features:
+- **Capture screenshots** using the automated screenshot tool (see below)
+- **Add overview screenshot** to `Components.Md` for quick visual reference
+- **Add feature screenshots** to detailed component documentation
+- **Update screenshots** when visual changes are made to components
+- **Follow naming conventions**: `overview.png` for Components.Md, descriptive names for features
+
+**Screenshot Storage Convention**: `docs/screenshots/<ComponentName>/`
+
+**Screenshot Naming Convention**:
+- `overview.png` - Used in Components.Md for quick reference
+- Descriptive feature names - `basic.png`, `click-handler.png`, `custom-style.png`, etc.
+
+**Screenshot Format**: PNG format, reasonable resolution (1280x720 viewport recommended)
+
+**How to Capture Screenshots**:
+The project includes an automated screenshot tool at `tools/ScreenshotTool` that uses Playwright to capture component screenshots.
+
+**Step 1: Start the Notebook Application** (in a separate terminal/window)
+
+On Windows:
+```powershell
+# Open a new PowerShell window and run:
+dotnet run --project src/LmComponents.Notebook
+```
+
+On Linux/macOS:
+```bash
+# Run in background
+dotnet run --project src/LmComponents.Notebook &
+```
+
+**Step 2: Run the Screenshot Tool** (in another terminal)
+
+Capture all components:
+```bash
+dotnet tools/ScreenshotTool/bin/Debug/net10.0/ScreenshotTool.dll http://localhost:5285 docs/screenshots
+```
+
+Capture specific component(s):
+```bash
+# Just one component
+dotnet tools/ScreenshotTool/bin/Debug/net10.0/ScreenshotTool.dll http://localhost:5285 docs/screenshots LmButton
+
+# Multiple components
+dotnet tools/ScreenshotTool/bin/Debug/net10.0/ScreenshotTool.dll http://localhost:5285 docs/screenshots LmButton LmCounter
+```
+
+**For New Components**:
+Create a new screenshotter class in `tools/ScreenshotTool/Screenshotters/` implementing `IComponentScreenshotter`, then register it in `Program.cs`. See the tool's README for details.
+
 ### Verification Checklist
 
 Before completing any task, verify:
 - [ ] All modified components have updated documentation
 - [ ] Components.Md is in sync with all components
+- [ ] Screenshots are captured and referenced in documentation
+- [ ] Overview screenshots are included in Components.Md
+- [ ] Feature screenshots are included in detailed component docs
 - [ ] Notebook demos reflect current component usage
 - [ ] Architectural changes are reflected in CONTRIBUTING.md
 - [ ] No documentation references removed/renamed components
@@ -227,7 +283,49 @@ public class LmComponentNameTests : TestContext
 }
 ```
 
-### 6. Build and Test
+### 6. Capture Screenshots
+
+**Step 1**: Create a screenshotter class in `tools/ScreenshotTool/Screenshotters/LmComponentNameScreenshotter.cs`:
+```csharp
+using System;
+using System.IO;
+using System.Threading.Tasks;
+using Microsoft.Playwright;
+
+namespace ScreenshotTool.Screenshotters;
+
+public class LmComponentNameScreenshotter : IComponentScreenshotter
+{
+    public string ComponentName => "LmComponentName";
+
+    public async Task CaptureScreenshotsAsync(IPage page, string baseUrl, string outputDir)
+    {
+        // Implement screenshot logic
+    }
+}
+```
+
+**Step 2**: Register it in `tools/ScreenshotTool/Program.cs`:
+```csharp
+private static readonly Dictionary<string, IComponentScreenshotter> Screenshotters = new()
+{
+    { "LmButton", new LmButtonScreenshotter() },
+    { "LmCounter", new LmCounterScreenshotter() },
+    { "LmComponentName", new LmComponentNameScreenshotter() } // Add this
+};
+```
+
+**Step 3**: Run the screenshot tool (with Notebook running in another terminal):
+```bash
+# Capture just your new component
+dotnet tools/ScreenshotTool/bin/Debug/net10.0/ScreenshotTool.dll http://localhost:5285 docs/screenshots LmComponentName
+```
+
+**Step 4**: Add screenshots to documentation:
+- Add overview screenshot to `Components.Md`
+- Add feature screenshots to `docs/LmComponents.Components/ComponentName.Md`
+
+### 7. Build and Test
 
 ```bash
 dotnet build
