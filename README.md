@@ -14,7 +14,7 @@ Modern AI assistants can significantly accelerate development when given clear, 
 - **Visual Documentation**: Screenshots showing component appearance and behavior
 - **Minimal Context Loading**: LLMs can grasp the entire component library structure without reading full documentation
 - **Clear Dependencies**: Every component explicitly lists its dependencies
-- **Simple Navigation**: The Notebook demo app uses standard HTML links compatible with MCP browser tools
+- **Simple Navigation**: The Storybook demo app uses standard HTML links compatible with MCP browser tools
 - **Consistent Structure**: Predictable patterns across all components and documentation
 - **Automated Tooling**: Screenshot capture tool for maintaining visual documentation
 
@@ -27,7 +27,7 @@ LmComponents/
 ├── CONTRIBUTING.md                  # How to contribute (for humans and AIs)
 ├── src/
 │   ├── LmComponents.Components/     # Component library
-│   ├── LmComponents.Notebook/       # Interactive demo/test application
+│   ├── LmComponents.Storybook/      # Interactive demo/test application
 │   └── LmComponents.Tests/          # Component tests
 ├── docs/                            # Detailed component documentation
 │   ├── screenshots/                 # Component screenshots
@@ -43,12 +43,12 @@ LmComponents/
 dotnet build
 ```
 
-### Run the Notebook
+### Run the Storybook
 ```bash
-dotnet run --project src/LmComponents.Notebook
+dotnet run --project src/LmComponents.Storybook
 ```
 
-The Notebook application provides an interactive environment where you can browse and test all available components.
+The Storybook application provides an interactive environment where you can browse and test all available components.
 
 ### Run Tests
 ```bash
@@ -57,9 +57,9 @@ dotnet test
 
 ### Capture Screenshots
 
-**Start the Notebook** (in a separate terminal/window):
+**Start the Storybook** (in a separate terminal/window):
 ```bash
-dotnet run --project src/LmComponents.Notebook
+dotnet run --project src/LmComponents.Storybook
 ```
 
 **Run the Screenshot Tool** (in another terminal):
@@ -113,7 +113,7 @@ For both human developers and AI assistants:
 2. **Read `CONTRIBUTING.md`** for architectural decisions and mandatory documentation rules
 3. **Update documentation synchronously** with code changes - this is not optional
 4. Follow the established patterns for component structure
-5. Ensure Notebook demos remain simple and MCP-browser-compatible
+5. Ensure Storybook demos remain simple and MCP-browser-compatible
 
 The most critical rule: **Every code change MUST be accompanied by documentation updates.** See CONTRIBUTING.md for detailed rules.
 

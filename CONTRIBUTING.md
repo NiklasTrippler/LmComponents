@@ -19,7 +19,7 @@ When making ANY changes to this project, you MUST update documentation as follow
 If you modify a component's code (add/remove parameters, change behavior, add features, fix bugs):
 - **Update** `docs/<namespace>/ComponentName.Md` with the changes
 - **Update** `Components.Md` if the summary or dependencies changed
-- **Update** the Notebook demo page if the usage changed
+- **Update** the Storybook demo page if the usage changed
 - **Update** tests to reflect new behavior
 
 #### 2. New Components
@@ -27,7 +27,7 @@ If you modify a component's code (add/remove parameters, change behavior, add fe
 If you add a new component:
 - **Create** `docs/<namespace>/ComponentName.Md` with full documentation
 - **Add** entry to `Components.Md` with summary and dependencies
-- **Create** demo page in Notebook showing usage
+- **Create** demo page in Storybook showing usage
 - **Create** tests for the new component
 - **Update** README.md if it affects project overview
 
@@ -44,7 +44,7 @@ If you change how the project is structured or organized (folder structure, nami
 If you remove a component or feature:
 - **Remove** the component's documentation file
 - **Remove** entry from `Components.Md`
-- **Remove** Notebook demo page
+- **Remove** Storybook demo page
 - **Remove** tests
 - **Update** any components that depended on the removed component
 
@@ -74,18 +74,18 @@ If you add a new component, modify component appearance, or add visual features:
 **How to Capture Screenshots**:
 The project includes an automated screenshot tool at `tools/ScreenshotTool` that uses Playwright to capture component screenshots.
 
-**Step 1: Start the Notebook Application** (in a separate terminal/window)
+**Step 1: Start the Storybook Application** (in a separate terminal/window)
 
 On Windows:
 ```powershell
 # Open a new PowerShell window and run:
-dotnet run --project src/LmComponents.Notebook
+dotnet run --project src/LmComponents.Storybook
 ```
 
 On Linux/macOS:
 ```bash
 # Run in background
-dotnet run --project src/LmComponents.Notebook &
+dotnet run --project src/LmComponents.Storybook &
 ```
 
 **Step 2: Run the Screenshot Tool** (in another terminal)
@@ -115,7 +115,7 @@ Before completing any task, verify:
 - [ ] Screenshots are captured and referenced in documentation
 - [ ] Overview screenshots are included in Components.Md
 - [ ] Feature screenshots are included in detailed component docs
-- [ ] Notebook demos reflect current component usage
+- [ ] Storybook demos reflect current component usage
 - [ ] Architectural changes are reflected in CONTRIBUTING.md
 - [ ] No documentation references removed/renamed components
 
@@ -143,7 +143,7 @@ ComponentName/
 └── LmComponentName.razor.css   # Scoped component styles
 ```
 
-#### LmComponents.Notebook
+#### LmComponents.Storybook
 - **Type**: Blazor Web App (Server)
 - **Purpose**: Interactive application for browsing, testing, and documenting components
 - **Key Features**:
@@ -151,7 +151,7 @@ ComponentName/
   - Live component demonstrations
   - Clear component isolation (one component per demo page)
   - Accessible via standard web browser without complex interactions
-- **Location**: `src/LmComponents.Notebook/`
+- **Location**: `src/LmComponents.Storybook/`
 
 Demo page structure:
 ```
@@ -177,7 +177,7 @@ ComponentTests/
 This project follows specific design principles to make it easy for AI assistants to work with:
 
 1. **Clear Documentation**: Every component has both quick reference and detailed docs
-2. **Simple Navigation**: Notebook uses standard HTML links, no SPA complexity
+2. **Simple Navigation**: Storybook uses standard HTML links, no SPA complexity
 3. **Isolated Examples**: Each component demo on separate page
 4. **Explicit Dependencies**: Component.Md files clearly list what each component uses
 5. **Consistent Structure**: All components follow same file/folder patterns
@@ -247,9 +247,9 @@ Add entry in alphabetical order:
 - **Documentation**: [Full Documentation](docs/LmComponents.Components/ComponentName.Md)
 ```
 
-### 4. Create Notebook Demo
+### 4. Create Storybook Demo
 
-Create `src/LmComponents.Notebook/Components/Pages/Components/ComponentNameDemo.razor`:
+Create `src/LmComponents.Storybook/Components/Pages/Components/ComponentNameDemo.razor`:
 ```razor
 @page "/components/componentname"
 @rendermode InteractiveServer
@@ -261,7 +261,7 @@ Create `src/LmComponents.Notebook/Components/Pages/Components/ComponentNameDemo.
 <!-- Demo sections -->
 ```
 
-Update `src/LmComponents.Notebook/Components/Layout/NavMenu.razor` to add navigation link.
+Update `src/LmComponents.Storybook/Components/Layout/NavMenu.razor` to add navigation link.
 
 ### 5. Create Tests
 
@@ -315,7 +315,7 @@ private static readonly Dictionary<string, IComponentScreenshotter> Screenshotte
 };
 ```
 
-**Step 3**: Run the screenshot tool (with Notebook running in another terminal):
+**Step 3**: Run the screenshot tool (with Storybook running in another terminal):
 ```bash
 # Capture just your new component
 dotnet tools/ScreenshotTool/bin/Debug/net10.0/ScreenshotTool.dll http://localhost:5285 docs/screenshots LmComponentName
@@ -330,7 +330,7 @@ dotnet tools/ScreenshotTool/bin/Debug/net10.0/ScreenshotTool.dll http://localhos
 ```bash
 dotnet build
 dotnet test
-dotnet run --project src/LmComponents.Notebook
+dotnet run --project src/LmComponents.Storybook
 ```
 
 Verify everything works and documentation is complete.

@@ -1,4 +1,4 @@
-using LmComponents.Notebook.Components;
+using LmComponents.Storybook.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
