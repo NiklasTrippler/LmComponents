@@ -1,7 +1,7 @@
 <Solution>
   <Folder Name="/src/">
     <Project Path="src/LmComponents.Components/LmComponents.Components.csproj" />
-    <Project Path="src/LmComponents.Notebook/LmComponents.Notebook.csproj" />
+    <Project Path="src/LmComponents.Storybook/LmComponents.Storybook.csproj" />
     <Project Path="src/LmComponents.Tests/LmComponents.Tests.csproj" />
   </Folder>
 </Solution>

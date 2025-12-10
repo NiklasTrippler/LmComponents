@@ -38,16 +38,16 @@ This architecture ensures that `Program.cs` stays clean and each component's scr
 
 ## Usage
 
-### Step 1: Start the Notebook Application
+### Step 1: Start the Storybook Application
 
-The Notebook application must be running before you can capture screenshots.
+The Storybook application must be running before you can capture screenshots.
 
-**Important**: Start the Notebook in a separate terminal/process to keep it running in the background.
+**Important**: Start the Storybook in a separate terminal/process to keep it running in the background.
 
 **On Windows (PowerShell):**
 ```powershell
 # Open a new PowerShell window and run:
-dotnet run --project src/LmComponents.Notebook
+dotnet run --project src/LmComponents.Storybook
 
 # Keep this window open while running the screenshot tool
 ```
@@ -55,13 +55,13 @@ dotnet run --project src/LmComponents.Notebook
 **On Linux/macOS (Bash):**
 ```bash
 # Run in background using &
-dotnet run --project src/LmComponents.Notebook &
+dotnet run --project src/LmComponents.Storybook &
 
 # Or use a terminal multiplexer like tmux/screen
 ```
 
 **Cross-Platform Alternative:**
-Use your IDE's terminal or open a dedicated terminal window to run the Notebook, then use another terminal for the screenshot tool.
+Use your IDE's terminal or open a dedicated terminal window to run the Storybook, then use another terminal for the screenshot tool.
 
 ### Step 2: Run the Screenshot Tool
 
@@ -91,7 +91,7 @@ ScreenshotTool <base-url> <output-directory> [component1] [component2] ...
 ```
 
 **Arguments:**
-- `base-url`: URL where the Notebook application is running (e.g., `http://localhost:5285`)
+- `base-url`: URL where the Storybook application is running (e.g., `http://localhost:5285`)
 - `output-directory`: Directory where screenshots will be saved (e.g., `docs/screenshots`)
 - `component(s)`: (Optional) Specific component name(s) to capture. If omitted, all components will be captured.
 
@@ -222,8 +222,8 @@ docs/screenshots/
 ## Troubleshooting
 
 **Error: "net::ERR_CONNECTION_REFUSED"**
-- Ensure the Notebook application is running on the specified port
-- Check that the URL matches the Notebook's running URL
+- Ensure the Storybook application is running on the specified port
+- Check that the URL matches the Storybook's running URL
 
 **Error: "Playwright browser not found"**
 - Run `playwright install chromium` to install the browser
@@ -238,7 +238,7 @@ This tool is part of the mandatory documentation synchronization process. When a
 
 1. ✅ Create/update component code
 2. ✅ Create/update component documentation
-3. ✅ Create/update Notebook demo
+3. ✅ Create/update Storybook demo
 4. ✅ **Capture screenshots using this tool**
 5. ✅ Reference screenshots in documentation
 6. ✅ Update Components.Md with overview screenshot

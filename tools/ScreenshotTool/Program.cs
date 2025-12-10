@@ -87,7 +87,7 @@ class Program
         Console.WriteLine("Usage: ScreenshotTool <base-url> <output-directory> [component1] [component2] ...");
         Console.WriteLine();
         Console.WriteLine("Arguments:");
-        Console.WriteLine("  base-url          URL where the Notebook application is running");
+        Console.WriteLine("  base-url          URL where the Storybook application is running");
         Console.WriteLine("  output-directory  Directory where screenshots will be saved");
         Console.WriteLine("  component(s)      Optional. Specific component(s) to capture.");
         Console.WriteLine("                    If omitted, all components will be captured.");

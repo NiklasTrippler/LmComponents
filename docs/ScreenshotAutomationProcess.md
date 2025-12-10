@@ -163,7 +163,7 @@ tools/ScreenshotTool/
 When adding a new component, developers/LLMs must:
 
 1. ✅ Create component code
-2. ✅ Create Notebook demo page
+2. ✅ Create Storybook demo page
 3. ✅ Update screenshot tool to capture new component
 4. ✅ Run screenshot tool to generate images
 5. ✅ Add overview screenshot to Components.Md
@@ -184,12 +184,12 @@ playwright install chromium
 
 ### Execution Steps
 
-**Important**: The Notebook application and screenshot tool must run in separate terminals/processes.
+**Important**: The Storybook application and screenshot tool must run in separate terminals/processes.
 
 **On Windows:**
 ```powershell
-# Terminal 1: Start the Notebook (keep this running)
-dotnet run --project src/LmComponents.Notebook
+# Terminal 1: Start the Storybook (keep this running)
+dotnet run --project src/LmComponents.Storybook
 
 # Terminal 2: Run screenshot tool
 # Capture all components:
@@ -203,13 +203,13 @@ dotnet tools/ScreenshotTool/bin/Debug/net10.0/ScreenshotTool.dll http://localhos
 **On Linux/macOS:**
 ```bash
 # Option 1: Background process
-dotnet run --project src/LmComponents.Notebook &
+dotnet run --project src/LmComponents.Storybook &
 
 # Then run screenshot tool
 dotnet tools/ScreenshotTool/bin/Debug/net10.0/ScreenshotTool.dll http://localhost:5285 docs/screenshots LmButton
 
 # Option 2: Use terminal multiplexer (tmux/screen)
-# Start Notebook in one pane, screenshot tool in another
+# Start Storybook in one pane, screenshot tool in another
 ```
 
 **Cross-Platform Alternative:**
@@ -378,8 +378,8 @@ When an LLM (like Claude or Gemini) works on this project:
 ### Common Issues and Solutions
 
 **Issue**: "net::ERR_CONNECTION_REFUSED"
-- **Cause**: Notebook application not running
-- **Solution**: Start `dotnet run --project src/LmComponents.Notebook`
+- **Cause**: Storybook application not running
+- **Solution**: Start `dotnet run --project src/LmComponents.Storybook`
 
 **Issue**: Screenshots are blank/white
 - **Cause**: Blazor not fully initialized

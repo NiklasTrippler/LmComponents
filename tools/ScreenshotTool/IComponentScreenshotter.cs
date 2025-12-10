@@ -17,7 +17,7 @@ public interface IComponentScreenshotter
     /// Capture all screenshots for this component
     /// </summary>
     /// <param name="page">The Playwright page instance</param>
-    /// <param name="baseUrl">Base URL of the Notebook application</param>
+    /// <param name="baseUrl">Base URL of the Storybook application</param>
     /// <param name="outputDir">Root output directory for screenshots</param>
     Task CaptureScreenshotsAsync(IPage page, string baseUrl, string outputDir);
 }
